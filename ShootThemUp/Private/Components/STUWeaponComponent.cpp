@@ -133,7 +133,6 @@ void USTUWeaponComponent::InitAnimations()
 	} else
 	{
 		UE_LOG(LogWeaponComponent, Error, TEXT("Equip anim notify is forgotten to set."));
-		checkNoEntry();
 	}
 
 	for(auto OneWeaponData : WeaponData)

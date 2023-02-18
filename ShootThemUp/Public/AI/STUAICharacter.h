@@ -17,6 +17,9 @@ public:
 	ASTUAICharacter(const FObjectInitializer& ObjInit);
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "AI")
-		UBehaviorTree* BehaviorTreeAsset;
+	UBehaviorTree* BehaviorTreeAsset;
+
+protected:
+	virtual void OnDeath() override;
 	
 };

@@ -33,4 +33,6 @@ private:
 	FTimerHandle ShotTimerHandle;
 
 	void MakeDamage(const FHitResult& HitResult);
+
+	AController* GetController() const;
 };

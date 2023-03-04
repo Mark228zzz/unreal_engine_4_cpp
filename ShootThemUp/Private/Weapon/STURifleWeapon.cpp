@@ -70,6 +70,11 @@ void ASTURifleWeapon::MakeDamage(const FHitResult& HitResult)
 	const auto DamagedActor = HitResult.GetActor();
 	if(!DamagedActor) return;
 
-	DamagedActor->TakeDamage(DamageAmouth, FDamageEvent(), GetPlayerController(), this);
+	DamagedActor->TakeDamage(DamageAmouth, FDamageEvent(), GetController(), this);
 }
 
+AController* ASTURifleWeapon::GetController() const
+{
+	const auto Pawn = Cast<APawn>(GetOwner());
+	return Pawn ? Pawn->GetController() : nullptr;
+}
